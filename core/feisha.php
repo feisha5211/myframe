@@ -5,6 +5,7 @@ use Think\Exception;
 
 class feisha {
     public static $classMap = array();
+    public $assign;
 
     static public function run() {
         $route = new \core\libs\route();
@@ -37,6 +38,20 @@ class feisha {
             } else {
                 return false;
             }
+        }
+    }
+
+    public function assign($key, $value) {
+        $this->assign[$key] = $value;
+    }
+
+    public function display($file) {
+        $view_file = APP . '/views/' . $file;
+        if (is_file($view_file)) {
+            extract($this->assign);
+            include $view_file;
+        } else {
+            throw new Exception('视图文件' . $view_file . '不存在');
         }
     }
 }
