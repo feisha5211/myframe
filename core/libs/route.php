@@ -1,5 +1,6 @@
 <?php
 namespace core\libs;
+use core\libs\conf;
 
 class route {
     public $controller;
@@ -21,7 +22,7 @@ class route {
             if (!empty($path_arr[1])) {
                 $this->action = $path_arr[1];
             } else {
-                $this->action = 'index';
+                $this->action = conf::get('action', 'route');
             }
 
             // url多余部分参数处理
@@ -34,8 +35,8 @@ class route {
             }
 
         } else {
-            $this->controller = 'index';
-            $this->action = 'index';
+            $this->controller = conf::get('action', 'route');
+            $this->action = conf::get('action', 'route');
         }
     }
 
