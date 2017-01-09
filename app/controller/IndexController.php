@@ -3,6 +3,11 @@ namespace app\controller;
 
 class IndexController extends \core\feisha{
     public function index() {
+	    $log = new \core\libs\log;
+	    $log::init();
+	    $log::log('test', 'test');
+	    $log::log($_SERVER, 'abc');
+	    die;
         echo 'this is IndexController index_action';
         $model = new \core\libs\model();
         $sql = "SELECT * from users";

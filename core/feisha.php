@@ -1,8 +1,6 @@
 <?php
 namespace core;
 
-use Think\Exception;
-
 class feisha {
     public static $classMap = array();
     public $assign;
