@@ -8,8 +8,8 @@ class feisha {
     static public function run() {
         $route = new \core\libs\route();
         $controller = ucfirst($route->controller);
-        $action = $route->action;
-        $controller_file = APP.'/controller/'.$controller.'Controller.php';
+	    $action = $route->action;
+	    $controller_file = APP.'/controller/'.$controller.'Controller.php';
         $ctrl_class = "\\".MODULE."\\controller\\".$controller.'Controller';
         if (is_file($controller_file)) {
             include $controller_file;

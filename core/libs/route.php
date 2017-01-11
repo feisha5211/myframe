@@ -14,7 +14,7 @@ class route {
          * 3.返回对应控制器和方法
          */
         if (isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] != '/') {
-            $path = $_SERVER['REQUEST_URI'];
+	        $path = strstr($_SERVER['REQUEST_URI'], 'index');
             $path_arr = explode('/', trim($path, '/'));
             if (!empty($path_arr[0])) {
                 $this->controller = $path_arr[0];

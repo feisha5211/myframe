@@ -7,7 +7,7 @@ class IndexController extends \core\feisha{
 	    $log::init();
 	    $log::log('test', 'test');
 	    $log::log($_SERVER, 'abc');
-	    die;
+
         echo 'this is IndexController index_action';
         $model = new \core\libs\model();
         $sql = "SELECT * from users";
